@@ -6,7 +6,7 @@ import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import com.dcompras.gamarra.converter.Convertidor;
+import com.dcompras.gamarra.converter.Converter;
 import com.dcompras.gamarra.entity.Product;
 import com.dcompras.gamarra.model.MProduct;
 import com.dcompras.gamarra.repository.ProductRepository;
@@ -22,8 +22,8 @@ public class ProductService {
 	private ProductRepository repositorio;
 	
 	@Autowired
-	@Qualifier("convertidor")
-	private Convertidor convertidor;
+	@Qualifier("converter")
+	private Converter converter;
 	
 	public boolean crear(Product product) {
 		logger.info("CREANDO PRODUCTO");
@@ -40,6 +40,6 @@ public class ProductService {
 	
 	public List<MProduct> obtener(){
 		logger.info("LISTANDO TODOS LOS PRODUCTOS");
-		return convertidor.convertirLista(repositorio.findAll());
+		return converter.convertirLista(repositorio.findAll());
 	}
 }

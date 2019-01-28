@@ -7,8 +7,8 @@ import com.dcompras.gamarra.entity.*;
 import com.dcompras.gamarra.model.*;
 import org.springframework.stereotype.Component;
 
-@Component("convertidor")
-public class Convertidor {
+@Component("converter")
+public class Converter {
 	
 	public List<MProduct> convertirLista(List<Product> products){
 		List<MProduct> mproductos = new ArrayList<>();

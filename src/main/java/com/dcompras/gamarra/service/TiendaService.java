@@ -9,7 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.dcompras.gamarra.converter.Convertidor;
+import com.dcompras.gamarra.converter.Converter;
 import com.dcompras.gamarra.entity.Tienda;
 import com.dcompras.gamarra.model.MTienda;
 import com.dcompras.gamarra.model.Response;
@@ -22,7 +22,7 @@ public class TiendaService implements CommandLineRunner {
 	
 	@Autowired
 	@Qualifier("convertidor")
-	private Convertidor convertidor;
+	private Converter converter;
 	
 	@Autowired
 	@Qualifier("tiendaRepository")
@@ -59,7 +59,7 @@ public class TiendaService implements CommandLineRunner {
 		System.out.println("json es"+mtienda);
 		
 		logger.info("Listando tiendas");
-		return convertidor.convertirTienda(tiendaRepository.findAll());
+		return converter.convertirTienda(tiendaRepository.findAll());
 		
 	}
 

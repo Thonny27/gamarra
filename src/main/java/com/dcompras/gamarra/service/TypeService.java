@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.dcompras.gamarra.converter.Convertidor;
+import com.dcompras.gamarra.converter.Converter;
 import com.dcompras.gamarra.model.MType;
 import com.dcompras.gamarra.repository.TypeRepository;
 
@@ -16,8 +16,8 @@ public class TypeService {
 	private static final Log logger = org.apache.commons.logging.LogFactory.getLog(TypeService.class);
 	
 	@Autowired
-	@Qualifier("convertidor")
-	private Convertidor convertidor;
+	@Qualifier("converter")
+	private Converter converter;
 	
 	@Autowired
 	@Qualifier("typeRepository")
@@ -25,7 +25,7 @@ public class TypeService {
 	
 	public List<MType> obtener(){
 		logger.info("listando categorias");
-		return convertidor.convertirCategory(typeRepository.findAll());
+		return converter.convertirCategory(typeRepository.findAll());
 	}
 
 }
