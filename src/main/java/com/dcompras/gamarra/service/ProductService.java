@@ -22,7 +22,7 @@ public class ProductService {
 	private ProductRepository repositorio;
 	
 	@Autowired
-	@Qualifier("converter")
+	@Qualifier("convertidor")
 	private Converter converter;
 	
 	public boolean crear(Product product) {

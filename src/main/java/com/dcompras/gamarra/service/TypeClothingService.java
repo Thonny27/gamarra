@@ -14,7 +14,7 @@ public class TypeClothingService {
     private static final Log logger = org.apache.commons.logging.LogFactory.getLog(TypeClothingService.class);
 
     @Autowired
-    @Qualifier("converter")
+    @Qualifier("convertidor")
     private Converter converter;
 
     @Autowired

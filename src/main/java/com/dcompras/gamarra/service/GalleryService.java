@@ -14,21 +14,21 @@ public class GalleryService {
     private static final Log logger = org.apache.commons.logging.LogFactory.getLog(GalleryService.class);
 
     @Autowired
-    @Qualifier("converter")
+    @Qualifier("convertidor")
     private Converter converter;
 
     @Autowired
     @Qualifier("galleryRepository")
-    private GalleryRespository galleryRespository;
+    private GalleryRespository galleryRepository;
 
     public GalleryList getGalleryList(){
-        return new GalleryList(converter.galleryConverter(galleryRespository.findAll()));
+        return new GalleryList(converter.galleryConverter(galleryRepository.findAll()));
     }
 
     public boolean add(Gallery gallery) {
         logger.info("Creando gallery");
         try {
-            galleryRespository.save(gallery);
+            galleryRepository.save(gallery);
             return true;
         } catch (Exception e) {
             logger.error("error al crear gallery "+e);

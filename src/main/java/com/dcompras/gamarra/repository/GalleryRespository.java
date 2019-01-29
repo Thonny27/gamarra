@@ -10,5 +10,5 @@ import java.util.List;
 @Repository("galleryRepository")
 public interface GalleryRespository extends JpaRepository<Gallery, Serializable> {
 
-    public abstract List<Gallery> findbyId(int id);
+    public abstract List<Gallery> findById(int id);
 }

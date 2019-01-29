@@ -21,7 +21,7 @@ public class CategoryController {
         return categoryService.getCategorylist();
     }
 
-    @PostMapping("addCategory")
+    @PostMapping("/addCategory")
     public boolean addCategory(@RequestBody @Validated Category category){
         return categoryService.add(category);
     }

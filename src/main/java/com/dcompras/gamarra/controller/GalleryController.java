@@ -16,12 +16,12 @@ public class GalleryController {
     @Qualifier("galleryService")
     private GalleryService galleryService;
 
-    @GetMapping("/getGalleries")
+    @GetMapping("/listGalleries")
     public GalleryList getGalleries(){
         return galleryService.getGalleryList();
     }
 
-    @PostMapping("addGallery")
+    @PostMapping("/addGallery")
     public boolean addGallery(@RequestBody @Validated Gallery gallery){
         return galleryService.add(gallery);
     }
