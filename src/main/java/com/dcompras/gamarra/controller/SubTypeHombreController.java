@@ -1,7 +1,5 @@
 package com.dcompras.gamarra.controller;
 
-import java.util.List;
-
 import com.dcompras.gamarra.model.Response2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -16,7 +14,7 @@ import com.dcompras.gamarra.entity.SubTypeHombre;
 import com.dcompras.gamarra.entity.Tienda;
 import com.dcompras.gamarra.model.MSubTypeHombre;
 import com.dcompras.gamarra.service.SubTypeHombreService;
-
+s
 @RestController
 @RequestMapping("/gamarra")
 public class SubTypeHombreController {
@@ -26,12 +24,12 @@ public class SubTypeHombreController {
 	private SubTypeHombreService subTypeHombreService;
 	
 	
-	@PostMapping("/agregarSubTypehombre")
+	@PostMapping("/addSubTypehombre")
 	public boolean agregarSubTypeHombre(@RequestBody @Validated SubTypeHombre subTypeHombre) {
-		return subTypeHombreService.crear(subTypeHombre);
+		return subTypeHombreService.add(subTypeHombre);
 	}
 	
-	@GetMapping("/listarSubtypesHombre")
+	@GetMapping("/listSubtypesHombre")
 	public Response2 obtenerSubTypeHombre(){
 		return subTypeHombreService.obtener();
 	}

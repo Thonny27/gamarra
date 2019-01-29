@@ -1,13 +1,12 @@
 package com.dcompras.gamarra.service;
-import java.util.List;
 
+import com.dcompras.gamarra.model.TypeList;
 import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.dcompras.gamarra.converter.Converter;
-import com.dcompras.gamarra.model.MType;
 import com.dcompras.gamarra.repository.TypeRepository;
 
 @Service("typeService")
@@ -23,9 +22,9 @@ public class TypeService {
 	@Qualifier("typeRepository")
 	private TypeRepository typeRepository;
 	
-	public List<MType> obtener(){
+	public TypeList getTypeList(){
 		logger.info("listando categorias");
-		return converter.convertirCategory(typeRepository.findAll());
+		return new TypeList(converter.typeConverter(typeRepository.findAll()));
 	}
 
 }

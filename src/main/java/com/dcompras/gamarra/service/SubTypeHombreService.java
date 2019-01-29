@@ -29,7 +29,7 @@ public class SubTypeHombreService {
 		return new Response2(converter.convertirSubTypeHombre(subTypeHombreRepository.findAll()));
 	}
 
-	public boolean crear(SubTypeHombre subTypeHombre) {
+	public boolean add(SubTypeHombre subTypeHombre) {
 		logger.info("CREANDO SUBTYPE_HOMBRE");
 		try {
 			
