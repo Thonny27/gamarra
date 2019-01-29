@@ -14,7 +14,6 @@ import com.dcompras.gamarra.entity.SubTypeHombre;
 import com.dcompras.gamarra.entity.Tienda;
 import com.dcompras.gamarra.model.MSubTypeHombre;
 import com.dcompras.gamarra.service.SubTypeHombreService;
-s
 @RestController
 @RequestMapping("/gamarra")
 public class SubTypeHombreController {

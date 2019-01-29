@@ -48,6 +48,22 @@ public class Converter {
 			mCategories.add(new MCategory(category));
 		}
 		return mCategories;
-
 	}
+
+    public List<MTypeClothing> typeClothingConverter(List<TypeClothing> typeClothings) {
+        List<MTypeClothing> mTypeClothings = new ArrayList<>();
+        for (TypeClothing typeClothing : typeClothings) {
+            mTypeClothings.add(new MTypeClothing(typeClothing));
+        }
+        return mTypeClothings;
+    }
+
+	public List<MGallery> galleryConverter(List<Gallery> galleries) {
+		List<MGallery> mGalleries = new ArrayList<>();
+		for (Gallery gallery : galleries) {
+			mGalleries.add(new MGallery(gallery));
+		}
+		return mGalleries;
+	}
+
 }

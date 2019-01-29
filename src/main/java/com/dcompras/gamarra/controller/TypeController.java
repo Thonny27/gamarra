@@ -1,7 +1,5 @@
 package com.dcompras.gamarra.controller;
 
-import java.util.List;
-
 import com.dcompras.gamarra.model.TypeList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
