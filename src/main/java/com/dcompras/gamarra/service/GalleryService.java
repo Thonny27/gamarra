@@ -28,7 +28,7 @@ public class GalleryService {
         return new GalleryList(converter.galleryConverter(galleryRepository.findAll()));
     }
 
-    public String address="Leoncio Prado, San Martín de Porres 15107";
+    //public String address="Leoncio Prado, San Martín de Porres 15107";
 
     public boolean add(Gallery gallery) {
 
@@ -39,7 +39,7 @@ public class GalleryService {
             GetLocationList ss = new GetLocationList();
 
             RestTemplate restTemplate = new RestTemplate();
-            Response response = restTemplate.getForObject("https://geocoder.api.here.com/6.2/geocode.json?app_id=kDdjNcp6YR8GQdD5pOaI&app_code=RlZvZ52xurUciGnFcXQ9Ag&searchtext="+address, Response.class);
+            Response response = restTemplate.getForObject("https://geocoder.api.here.com/6.2/geocode.json?app_id=kDdjNcp6YR8GQdD5pOaI&app_code=RlZvZ52xurUciGnFcXQ9Ag&searchtext="+gallery.getDirection(), Response.class);
             System.out.println("Direccion :Leoncio Prado, San Martín de Porres 15107");
             ss.setLt(response.getResponse().getView().get(0).getResult().get(0).getLocation().getDisplayPosition().getLatitude());
             ss.setLg(response.getResponse().getView().get(0).getResult().get(0).getLocation().getDisplayPosition().getLongitude());
