@@ -36,9 +36,9 @@ public class MType {
 		this.name = type.getname();
 		this.state = type.getstate();
 	}
-	
+
 	public MType() {
-		
+
 	}
 	
 }

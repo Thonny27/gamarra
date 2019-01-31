@@ -1,6 +1,7 @@
 package com.dcompras.gamarra.service;
 
 import com.dcompras.gamarra.converter.Converter;
+import com.dcompras.gamarra.dto.TypeClothingRq;
 import com.dcompras.gamarra.entity.TypeClothing;
 import com.dcompras.gamarra.model.TypeClothingList;
 import com.dcompras.gamarra.repository.TypeclothingRepository;
@@ -28,6 +29,11 @@ public class TypeClothingService {
     public boolean add(TypeClothing typeClothing){
         logger.info("creando typeClothing...");
         try {
+            TypeClothingRq typeClothingRq = new TypeClothingRq();
+
+            typeClothing.setName(typeClothingRq.getName());
+            typeClothing.setName(typeClothingRq.getDetail());
+
             typeclothingRepository.save(typeClothing);
             logger.info("creado correctamente...");
             return true;

@@ -1,5 +1,6 @@
 package com.dcompras.gamarra.service;
 
+import com.dcompras.gamarra.entity.Type;
 import com.dcompras.gamarra.model.TypeList;
 import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,18 @@ public class TypeService {
 	public TypeList getTypeList(){
 		logger.info("listando categorias");
 		return new TypeList(converter.typeConverter(typeRepository.findAll()));
+	}
+
+	public boolean add(Type type){
+		logger.info("Creando type");
+		try{
+			typeRepository.save(type);
+			logger.info("type creado");
+			return true;
+		}catch (Exception e){
+			logger.info("error al crear type "+e);
+		}
+		return false;
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.dcompras.gamarra.controller;
 
+import com.dcompras.gamarra.dto.TypeClothingRq;
 import com.dcompras.gamarra.entity.TypeClothing;
 import com.dcompras.gamarra.model.TypeClothingList;
 import com.dcompras.gamarra.service.TypeClothingService;
@@ -22,7 +23,8 @@ public class TypeClothingcontroller {
     }
 
     @PostMapping("addTypeClothing")
-    public boolean addTypeClothing(@RequestBody @Validated TypeClothing typeClothing) {
+    public boolean addTypeClothing(@RequestBody @Validated TypeClothingRq typeClothingRq) {
+        TypeClothing typeClothing = new TypeClothing();
         return typeClothingService.add(typeClothing);
 
     }
