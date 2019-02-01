@@ -1,6 +1,5 @@
 package com.dcompras.gamarra.controller;
 
-import com.dcompras.gamarra.dto.TypeClothingRq;
 import com.dcompras.gamarra.entity.TypeClothing;
 import com.dcompras.gamarra.model.TypeClothingList;
 import com.dcompras.gamarra.service.TypeClothingService;
