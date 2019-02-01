@@ -29,10 +29,6 @@ public class TypeClothingService {
     public boolean add(TypeClothing typeClothing){
         logger.info("creando typeClothing...");
         try {
-            TypeClothingRq typeClothingRq = new TypeClothingRq();
-
-            typeClothing.setName(typeClothingRq.getName());
-            typeClothing.setName(typeClothingRq.getDetail());
 
             typeclothingRepository.save(typeClothing);
             logger.info("creado correctamente...");

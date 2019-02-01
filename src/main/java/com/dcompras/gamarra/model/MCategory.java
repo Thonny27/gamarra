@@ -15,6 +15,7 @@ public class MCategory {
     private String detail;
 
     public MCategory(Category category) {
+        this.id=category.getId();
         this.name = category.getName();
         this.detail = category.getDetail();
     }

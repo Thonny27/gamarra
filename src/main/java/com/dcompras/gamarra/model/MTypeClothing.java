@@ -14,9 +14,10 @@ public class MTypeClothing {
     private String name;
     private String detail;
 
-    public MTypeClothing(TypeClothing mtypeClothing) {
-        this.name = mtypeClothing.getName();
-        this.detail = mtypeClothing.getDetail();
+    public MTypeClothing(TypeClothing typeClothing) {
+        this.id=typeClothing.getId();
+        this.name = typeClothing.getName();
+        this.detail = typeClothing.getDetail();
     }
 
 }

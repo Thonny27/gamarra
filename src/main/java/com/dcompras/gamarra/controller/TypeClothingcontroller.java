@@ -23,8 +23,7 @@ public class TypeClothingcontroller {
     }
 
     @PostMapping("addTypeClothing")
-    public boolean addTypeClothing(@RequestBody @Validated TypeClothingRq typeClothingRq) {
-        TypeClothing typeClothing = new TypeClothing();
+    public boolean addTypeClothing(@RequestBody @Validated TypeClothing typeClothing) {
         return typeClothingService.add(typeClothing);
 
     }
