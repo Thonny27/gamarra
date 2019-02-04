@@ -11,4 +11,5 @@ import java.util.List;
 public interface GalleryRespository extends JpaRepository<Gallery, Serializable> {
 
     public abstract List<Gallery> findById(int id);
+    public abstract List<Gallery> findByName(String name);
 }

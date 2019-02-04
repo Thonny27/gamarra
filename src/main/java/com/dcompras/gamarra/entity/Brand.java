@@ -27,6 +27,18 @@ public class Brand {
     @Column(name="lg")
     private double lg;
 
+    @Column(name="gallery")
+    private int gallery;
+
+    @Column(name="type")
+    private int type;
+
+    @Column(name="category")
+    private int category;
+
+    @Column(name="typeClothing")
+    private int typeClothing;
+
     @Column(name="email")
     private String email;
 

@@ -1,5 +1,7 @@
 package com.dcompras.gamarra.service;
 
+import com.dcompras.gamarra.converter.Converter;
+import com.dcompras.gamarra.dto.BrandRs;
 import com.dcompras.gamarra.dto.GetLocationList;
 import com.dcompras.gamarra.entity.Brand;
 import com.dcompras.gamarra.model.BrandList;
@@ -17,9 +19,29 @@ public class BrandService {
     @Qualifier("brandRepository")
     private BrandRepository brandRepository;
 
+    @Autowired
+    @Qualifier("convertidor")
+    private Converter converter;
+
     public BrandList getBrandList(){
 
         return new BrandList(brandRepository.findAll());
+    }
+
+    public BrandRs getbrandRs(){
+        BrandRs brandRs = new BrandRs();
+        Brand brand = new Brand();
+        brandRs.setAddress(brand.getAddress());
+        brandRs.setLt(brand.getLt());
+        brandRs.setLg(brand.getLg());
+        brandRs.setEmail(brand.getEmail());
+        brandRs.getGallery();
+
+        brandRs.setName(brand.getName());
+        brandRs.setTelephone(brand.getTelephone());
+        brandRs.setWeb(brand.getWeb());
+
+        return brandRs;
     }
 
     public boolean add(Brand brand) {
