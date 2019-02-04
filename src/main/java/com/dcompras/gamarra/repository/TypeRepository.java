@@ -11,7 +11,7 @@ import com.dcompras.gamarra.entity.Type;
 @Repository("typeRepository")
 public interface TypeRepository extends JpaRepository<Type, Serializable> {
 	
-	public abstract List<Type> findByState (int state);
+	public abstract List<Type> findById (int id);
 	
 
 }

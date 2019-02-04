@@ -1,9 +1,12 @@
 package com.dcompras.gamarra.model;
 
 import com.dcompras.gamarra.entity.Category;
+import com.dcompras.gamarra.entity.Gallery;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor

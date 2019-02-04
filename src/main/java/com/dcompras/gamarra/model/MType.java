@@ -12,13 +12,11 @@ public class MType {
 
 	private int id;
 	private String name;
-	private int state;
 
 	
 	public MType(Type type) {
 		this.id = type.getId();
-		this.name = type.getname();
-		this.state = type.getstate();
+		this.name = type.getName();
 	}
 
 	

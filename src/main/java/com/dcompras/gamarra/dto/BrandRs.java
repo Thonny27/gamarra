@@ -20,4 +20,5 @@ public class BrandRs {
     private String name;
     private String telephone;
     private String web;
+
 }
