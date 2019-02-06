@@ -6,11 +6,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository("brandRepository")
 public interface BrandRepository extends JpaRepository<Brand, Serializable> {
 
-    public abstract List<Brand> findById(int id);
+    public abstract ArrayList<Brand> findById(int id);
 
 }

@@ -1,5 +1,6 @@
 package com.dcompras.gamarra.service;
 
+import com.dcompras.gamarra.dto.TypeRq;
 import com.dcompras.gamarra.entity.Type;
 import com.dcompras.gamarra.model.TypeList;
 import org.apache.commons.logging.Log;
@@ -31,6 +32,8 @@ public class TypeService {
 	public boolean add(Type type){
 		logger.info("Creando type");
 		try{
+			TypeRq typeRq = new TypeRq();
+			type.setName(typeRq.getName());
 			typeRepository.save(type);
 			logger.info("type creado");
 			return true;

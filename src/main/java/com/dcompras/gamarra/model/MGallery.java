@@ -19,6 +19,7 @@ public class MGallery {
     private double lg;
 
     public MGallery(Gallery gallery) {
+        this.id=gallery.getId();
         this.direction = gallery.getDirection();
         this.name = gallery.getName();
         this.nro_stands = gallery.getNro_stands();

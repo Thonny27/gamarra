@@ -1,5 +1,6 @@
 package com.dcompras.gamarra.dto;
 
+import com.dcompras.gamarra.entity.Category;
 import com.dcompras.gamarra.entity.Gallery;
 import com.dcompras.gamarra.entity.Type;
 import com.dcompras.gamarra.entity.TypeClothing;
@@ -16,9 +17,11 @@ public class BrandRs {
     private String email;
     private List<Gallery> gallery;
     private List<Type> type;
+    private List<Category> category;
     private List<TypeClothing> typeClothing;
     private String name;
     private String telephone;
     private String web;
+
 
 }

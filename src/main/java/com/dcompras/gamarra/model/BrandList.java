@@ -1,6 +1,5 @@
 package com.dcompras.gamarra.model;
 
-import com.dcompras.gamarra.dto.BrandRs;
 import com.dcompras.gamarra.entity.Brand;
 import lombok.Getter;
 import lombok.Setter;

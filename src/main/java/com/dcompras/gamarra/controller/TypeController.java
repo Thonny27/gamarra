@@ -1,6 +1,7 @@
 package com.dcompras.gamarra.controller;
 
 import com.dcompras.gamarra.dto.TypeClothingRq;
+import com.dcompras.gamarra.dto.TypeRq;
 import com.dcompras.gamarra.entity.Type;
 import com.dcompras.gamarra.model.TypeList;
 import org.springframework.beans.factory.annotation.Autowired;

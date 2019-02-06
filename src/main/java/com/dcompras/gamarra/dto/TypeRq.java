@@ -3,8 +3,7 @@ package com.dcompras.gamarra.dto;
 import lombok.Data;
 
 @Data
-public class TypeClothingRs {
+public class TypeRq {
 
     private String name;
-    private String detail;
 }

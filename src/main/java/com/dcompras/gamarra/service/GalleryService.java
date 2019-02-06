@@ -28,6 +28,10 @@ public class GalleryService {
         return new GalleryList(converter.galleryConverter(galleryRepository.findAll()));
     }
 
+    public GalleryList getGalleryListId(int id){
+        return new GalleryList(converter.galleryConverter(galleryRepository.findById(id)));
+    }
+
     //public String address="Leoncio Prado, San Martín de Porres 15107";
 
     public boolean add(Gallery gallery) {
