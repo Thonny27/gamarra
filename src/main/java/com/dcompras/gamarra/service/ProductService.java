@@ -1,7 +1,10 @@
 package com.dcompras.gamarra.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import com.dcompras.gamarra.dto.BrandRs;
+import com.dcompras.gamarra.dto.ProductRs;
 import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -41,5 +44,11 @@ public class ProductService {
 	public List<MProduct> obtener(){
 		logger.info("LISTANDO TODOS LOS PRODUCTOS");
 		return converter.convertirLista(repositorio.findAll());
+	}
+
+	public List<ProductRs> getProductRs(){
+		ProductRs productRs = new ProductRs();
+		List<ProductRs> listProduct= new ArrayList<>();
+		return null;
 	}
 }

@@ -31,6 +31,10 @@ public class BrandServiceServiceTest {
     @Qualifier("categoryRepository")
     private CategoryRepository categoryRepository;
 
+   /* @Autowired
+    @Qualifier("productRepository")
+    private ProductRepository productRepository;*/
+
 
     public List<Brand> obtenerLista(){
         return brandServiceRepositoryTest.findAll();
@@ -52,5 +56,8 @@ public class BrandServiceServiceTest {
         return categoryRepository.findById(id);
     }
 
+   /* public List<Product> getProduct(String name){
+        return productRepository.findByName(name);
+    }*/
 
 }

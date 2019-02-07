@@ -25,13 +25,13 @@ public class ProductController {
 	@Qualifier("servicio")
 	private ProductService servicio;
 	
-	@PostMapping("/product")
+	@PostMapping("/addProduct")
 	public boolean agregarProducto(@RequestBody @Valid Product product) {
 		return servicio.crear(product);
 		
 	}
 	
-	@GetMapping("/listProducts")
+	@GetMapping("/listAllProducts")
 	public List<MProduct> obtenerProductos(){
 		return servicio.obtener();
 	}

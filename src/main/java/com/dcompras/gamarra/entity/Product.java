@@ -10,7 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name="producto")
+@Table(name="product")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -32,10 +32,10 @@ public class Product {
 	private int typeClothing;
 
 	@Column(name="usesColor")
-	private String usesColor;
+	private int usesColor;
 
 	@Column(name="colorList")
-	private String colorList;
+	private int colorList;
 
 	@Column(name="description")
 	private String description;
