@@ -20,7 +20,7 @@ public class MProduct {
 	private String description;
 	private int discount;
 	private String imageList;
-	private String size;
+	private int size;
 	private boolean isCart;
 	private boolean isOutfit;
 	private boolean isWishList;

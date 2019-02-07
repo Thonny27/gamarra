@@ -1,13 +1,10 @@
 package com.dcompras.gamarra.service;
 
 import com.dcompras.gamarra.converter.Converter;
-import com.dcompras.gamarra.dto.BrandRq;
 import com.dcompras.gamarra.dto.BrandRs;
 import com.dcompras.gamarra.dto.GetLocationList;
 import com.dcompras.gamarra.entity.Brand;
-import com.dcompras.gamarra.entity.Gallery;
 import com.dcompras.gamarra.model.BrandList;
-import com.dcompras.gamarra.model.GalleryList;
 import com.dcompras.gamarra.model.Response;
 import com.dcompras.gamarra.repository.*;
 import org.apache.commons.logging.Log;
@@ -16,7 +13,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service("brandService")
 public class BrandService{
@@ -26,29 +24,6 @@ public class BrandService{
     @Qualifier("brandRepository")
     private BrandRepository brandRepository;
 
-    @Autowired
-    @Qualifier("galleryRepository")
-    private GalleryRespository galleryRepository;
-
-    @Autowired
-    @Qualifier("typeRepository")
-    private TypeRepository typeRepository;
-
-    @Autowired
-    @Qualifier("typleClothingRepository")
-    private TypeclothingRepository typleClothingRepository;
-
-    @Autowired
-    @Qualifier("categoryRepository")
-    private CategoryRepository categoryRepository;
-
-    @Autowired
-    @Qualifier("convertidor")
-    private Converter converter;
-
-    @Autowired
-    @Qualifier("galleryService")
-    private GalleryService galleryService;
 
     @Autowired
     @Qualifier("brandServiceServiceTest")

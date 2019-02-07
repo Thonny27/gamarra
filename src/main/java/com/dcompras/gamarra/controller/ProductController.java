@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import com.dcompras.gamarra.dto.ProductRs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,17 +24,17 @@ public class ProductController {
 	
 	@Autowired
 	@Qualifier("servicio")
-	private ProductService servicio;
+	private ProductService productService;
 	
 	@PostMapping("/addProduct")
 	public boolean agregarProducto(@RequestBody @Valid Product product) {
-		return servicio.crear(product);
+		return productService.crear(product);
 		
 	}
 	
 	@GetMapping("/listAllProducts")
-	public List<MProduct> obtenerProductos(){
-		return servicio.obtener();
+	public List<ProductRs> obtenerProductos(){
+		return productService.getProductRs();
 	}
 
 }

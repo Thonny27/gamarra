@@ -47,7 +47,7 @@ public class Product {
 	private String imageList;
 
 	@Column(name="size")
-	private String size;
+	private int size;
 
 	@Column(name="isCart")
 	private boolean isCart;

@@ -31,13 +31,24 @@ public class BrandServiceServiceTest {
     @Qualifier("categoryRepository")
     private CategoryRepository categoryRepository;
 
-   /* @Autowired
+    @Autowired
     @Qualifier("productRepository")
-    private ProductRepository productRepository;*/
+    private ProductRepository productRepository;
 
+    @Autowired
+    @Qualifier("colorListRepository")
+    private ColorListRepository colorListRepository;
+
+    @Autowired
+    @Qualifier("sizeRepository")
+    private SizeRepository sizeRepository;
 
     public List<Brand> obtenerLista(){
         return brandServiceRepositoryTest.findAll();
+    }
+
+    public List<Product> obtenerListaProduct(){
+        return productRepository.findAll();
     }
 
     public List<Gallery> obtenerGallery(int id){
@@ -56,8 +67,16 @@ public class BrandServiceServiceTest {
         return categoryRepository.findById(id);
     }
 
-   /* public List<Product> getProduct(String name){
-        return productRepository.findByName(name);
-    }*/
+    public List<Product> obtenerProduct(int id){
+        return productRepository.findById(id);
+    }
+
+    public List<ColorList> obtenerColorList(int id){
+        return colorListRepository.findById(id);
+    }
+
+    public List<Size> obtenerSizeList(int id){
+        return sizeRepository.findById(id);
+    }
 
 }

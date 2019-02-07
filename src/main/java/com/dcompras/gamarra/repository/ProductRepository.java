@@ -8,10 +8,11 @@ import org.springframework.stereotype.Repository;
 
 import com.dcompras.gamarra.entity.Product;
 
-@Repository("repositorio")
+@Repository("productRepository")
 public interface ProductRepository extends JpaRepository<Product, Serializable> {
 
+	public abstract List<Product> findById (int id);
 	public abstract List<Product> findByName (String name);
-	
+
 	
 }
