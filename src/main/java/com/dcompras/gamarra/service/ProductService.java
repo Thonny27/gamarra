@@ -55,29 +55,30 @@ public class ProductService {
 		ProductRs productRs = new ProductRs();
 		List<ProductRs> listProduct= new ArrayList<>();
 
+		for (int i=0;i<brandServiceServiceTest.obtenerListaProduct().size();i++) {
 
-		productRs.setType(brandServiceServiceTest.obtenerType(brandServiceServiceTest.obtenerListaProduct().get(0).getType()));
-		productRs.setCategory(brandServiceServiceTest.obtenerCategory(brandServiceServiceTest.obtenerListaProduct().get(0).getCategory()));
-		productRs.setTypeClothing(brandServiceServiceTest.obtenerTypeClothing(brandServiceServiceTest.obtenerListaProduct().get(0).getTypeClothing()));
-		productRs.setColorList(brandServiceServiceTest.obtenerColorList(brandServiceServiceTest.obtenerListaProduct().get(0).getColorList()));
-		productRs.setDescription(brandServiceServiceTest.obtenerListaProduct().get(0).getDescription());
-		productRs.setDiscount(brandServiceServiceTest.obtenerListaProduct().get(0).getDiscount());
-		productRs.setImageList(brandServiceServiceTest.obtenerListaProduct().get(0).getImageList());
-		productRs.setSize(brandServiceServiceTest.obtenerSizeList(brandServiceServiceTest.obtenerListaProduct().get(0).getSize()));
-		productRs.setCart(brandServiceServiceTest.obtenerListaProduct().get(0).isCart());
-		productRs.setOutfit(brandServiceServiceTest.obtenerListaProduct().get(0).isOutfit());
-		productRs.setWishList(brandServiceServiceTest.obtenerListaProduct().get(0).isWishList());
-		productRs.setName(brandServiceServiceTest.obtenerListaProduct().get(0).getName());
-		productRs.setPriority(brandServiceServiceTest.obtenerListaProduct().get(0).getPriority());
-		productRs.setPromotion(brandServiceServiceTest.obtenerListaProduct().get(0).isPromotion());
-		productRs.setQuantity(brandServiceServiceTest.obtenerListaProduct().get(0).getQuantity());
-		productRs.setRetailPrice(brandServiceServiceTest.obtenerListaProduct().get(0).getRetailPrice());
-		productRs.setSubNamePants(brandServiceServiceTest.obtenerListaProduct().get(0).getSubNamePants());
-		productRs.setSubNameShirt(brandServiceServiceTest.obtenerListaProduct().get(0).getSubNameShirt());
-		productRs.setWholesalePrice(brandServiceServiceTest.obtenerListaProduct().get(0).getWholesalePrice());
+			productRs.setType(brandServiceServiceTest.obtenerType(brandServiceServiceTest.obtenerListaProduct().get(0).getType()));
+			productRs.setCategory(brandServiceServiceTest.obtenerCategory(brandServiceServiceTest.obtenerListaProduct().get(0).getCategory()));
+			productRs.setTypeClothing(brandServiceServiceTest.obtenerTypeClothing(brandServiceServiceTest.obtenerListaProduct().get(0).getTypeClothing()));
+			productRs.setColorList(brandServiceServiceTest.obtenerColorList(brandServiceServiceTest.obtenerListaProduct().get(0).getColorList()));
+			productRs.setDescription(brandServiceServiceTest.obtenerListaProduct().get(0).getDescription());
+			productRs.setDiscount(brandServiceServiceTest.obtenerListaProduct().get(0).getDiscount());
+			productRs.setImageList(brandServiceServiceTest.obtenerListaProduct().get(0).getImageList());
+			productRs.setSize(brandServiceServiceTest.obtenerSizeList(brandServiceServiceTest.obtenerListaProduct().get(0).getSize()));
+			productRs.setCart(brandServiceServiceTest.obtenerListaProduct().get(0).isCart());
+			productRs.setOutfit(brandServiceServiceTest.obtenerListaProduct().get(0).isOutfit());
+			productRs.setWishList(brandServiceServiceTest.obtenerListaProduct().get(0).isWishList());
+			productRs.setName(brandServiceServiceTest.obtenerListaProduct().get(0).getName());
+			productRs.setPriority(brandServiceServiceTest.obtenerListaProduct().get(0).getPriority());
+			productRs.setPromotion(brandServiceServiceTest.obtenerListaProduct().get(0).isPromotion());
+			productRs.setQuantity(brandServiceServiceTest.obtenerListaProduct().get(0).getQuantity());
+			productRs.setRetailPrice(brandServiceServiceTest.obtenerListaProduct().get(0).getRetailPrice());
+			productRs.setSubNamePants(brandServiceServiceTest.obtenerListaProduct().get(0).getSubNamePants());
+			productRs.setSubNameShirt(brandServiceServiceTest.obtenerListaProduct().get(0).getSubNameShirt());
+			productRs.setWholesalePrice(brandServiceServiceTest.obtenerListaProduct().get(0).getWholesalePrice());
 
-		listProduct.add(productRs);
-
+			listProduct.add(productRs);
+		}
 		return listProduct;
 	}
 }
