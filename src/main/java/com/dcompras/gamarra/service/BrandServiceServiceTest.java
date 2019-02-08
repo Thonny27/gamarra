@@ -43,6 +43,9 @@ public class BrandServiceServiceTest {
     @Qualifier("sizeRepository")
     private SizeRepository sizeRepository;
 
+    @Autowired
+    private StoreRepository storeRepository;
+
     public List<Brand> obtenerLista(){
         return brandServiceRepositoryTest.findAll();
     }
@@ -77,6 +80,10 @@ public class BrandServiceServiceTest {
 
     public List<Size> obtenerSizeList(int id){
         return sizeRepository.findById(id);
+    }
+
+    public List<Store> obtenerStorelist(){
+        return storeRepository.findAll();
     }
 
 }

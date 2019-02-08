@@ -19,7 +19,7 @@ import com.dcompras.gamarra.repository.ProductRepository;
 public class ProductService {
 
 	private static final Log logger = org.apache.commons.logging.LogFactory.getLog(ProductService.class); //logger
-	
+
 	@Autowired
 	@Qualifier("productRepository")
 	private ProductRepository productRepository;
@@ -27,15 +27,15 @@ public class ProductService {
 	@Autowired
 	@Qualifier("brandServiceServiceTest")
 	private BrandServiceServiceTest brandServiceServiceTest;
-	
+
 	@Autowired
 	@Qualifier("convertidor")
 	private Converter converter;
-	
+
 	public boolean crear(Product product) {
 		logger.info("CREANDO PRODUCTO");
 		try {
-			
+
 			productRepository.save(product);
 			logger.info("PRODUCTO CREADO");
 			return true;
@@ -44,7 +44,7 @@ public class ProductService {
 		}
 		return false;
 	}
-	
+
 	public List<MProduct> obtener(){
 		logger.info("LISTANDO TODOS LOS PRODUCTOS");
 		return converter.convertirLista(productRepository.findAll());
@@ -52,33 +52,38 @@ public class ProductService {
 
 	public List<ProductRs> getProductRs(){
 
-		ProductRs productRs = new ProductRs();
+
 		List<ProductRs> listProduct= new ArrayList<>();
 
-		for (int i=0;i<brandServiceServiceTest.obtenerListaProduct().size();i++) {
 
-			productRs.setType(brandServiceServiceTest.obtenerType(brandServiceServiceTest.obtenerListaProduct().get(0).getType()));
-			productRs.setCategory(brandServiceServiceTest.obtenerCategory(brandServiceServiceTest.obtenerListaProduct().get(0).getCategory()));
-			productRs.setTypeClothing(brandServiceServiceTest.obtenerTypeClothing(brandServiceServiceTest.obtenerListaProduct().get(0).getTypeClothing()));
-			productRs.setColorList(brandServiceServiceTest.obtenerColorList(brandServiceServiceTest.obtenerListaProduct().get(0).getColorList()));
-			productRs.setDescription(brandServiceServiceTest.obtenerListaProduct().get(0).getDescription());
-			productRs.setDiscount(brandServiceServiceTest.obtenerListaProduct().get(0).getDiscount());
-			productRs.setImageList(brandServiceServiceTest.obtenerListaProduct().get(0).getImageList());
-			productRs.setSize(brandServiceServiceTest.obtenerSizeList(brandServiceServiceTest.obtenerListaProduct().get(0).getSize()));
-			productRs.setCart(brandServiceServiceTest.obtenerListaProduct().get(0).isCart());
-			productRs.setOutfit(brandServiceServiceTest.obtenerListaProduct().get(0).isOutfit());
-			productRs.setWishList(brandServiceServiceTest.obtenerListaProduct().get(0).isWishList());
-			productRs.setName(brandServiceServiceTest.obtenerListaProduct().get(0).getName());
-			productRs.setPriority(brandServiceServiceTest.obtenerListaProduct().get(0).getPriority());
-			productRs.setPromotion(brandServiceServiceTest.obtenerListaProduct().get(0).isPromotion());
-			productRs.setQuantity(brandServiceServiceTest.obtenerListaProduct().get(0).getQuantity());
-			productRs.setRetailPrice(brandServiceServiceTest.obtenerListaProduct().get(0).getRetailPrice());
-			productRs.setSubNamePants(brandServiceServiceTest.obtenerListaProduct().get(0).getSubNamePants());
-			productRs.setSubNameShirt(brandServiceServiceTest.obtenerListaProduct().get(0).getSubNameShirt());
-			productRs.setWholesalePrice(brandServiceServiceTest.obtenerListaProduct().get(0).getWholesalePrice());
+		for(Product  b : brandServiceServiceTest.obtenerListaProduct()) {
+
+			ProductRs productRs = new ProductRs();
+			productRs.setId(b.getId());
+			productRs.setType(brandServiceServiceTest.obtenerType(b.getType()));
+			productRs.setCategory(brandServiceServiceTest.obtenerCategory(b.getCategory()));
+			productRs.setTypeClothing(brandServiceServiceTest.obtenerTypeClothing(b.getTypeClothing()));
+			productRs.setColorList(brandServiceServiceTest.obtenerColorList(b.getColorList()));
+			productRs.setDescription(b.getDescription());
+			productRs.setDiscount(b.getDiscount());
+			productRs.setImageList(b.getImageList());
+			productRs.setSize(brandServiceServiceTest.obtenerSizeList(b.getSize()));
+			productRs.setCart(b.isCart());
+			productRs.setOutfit(b.isOutfit());
+			productRs.setWishList(b.isWishList());
+			productRs.setName(b.getName());
+			productRs.setPriority(b.getPriority());
+			productRs.setPromotion(b.isPromotion());
+			productRs.setQuantity(b.getQuantity());
+			productRs.setRetailPrice(b.getRetailPrice());
+			productRs.setSubNamePants(b.getSubNamePants());
+			productRs.setSubNameShirt(b.getSubNameShirt());
+			productRs.setWholesalePrice(b.getWholesalePrice());
+
 
 			listProduct.add(productRs);
 		}
+
 		return listProduct;
 	}
 }

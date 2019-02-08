@@ -37,12 +37,12 @@ public class BrandService{
 
     public List<BrandRs> getbrandRs(){
 
-        BrandRs brandRs = new BrandRs();
-        List<BrandRs> listBrand = new ArrayList<>();
 
+        List<BrandRs> listBrand = new ArrayList<>();
 
             for (int i=0;i<brandServiceServiceTest.obtenerLista().size();i++) {
 
+                BrandRs brandRs = new BrandRs();
 
                 brandRs.setAddress(brandServiceServiceTest.obtenerLista().get(i).getAddress());
                 brandRs.setLt(brandServiceServiceTest.obtenerLista().get(i).getLt());
