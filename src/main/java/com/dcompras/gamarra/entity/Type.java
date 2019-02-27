@@ -16,14 +16,13 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Data
 public class Type {
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name="id")
 	private int id;
-	
+
 	@Column(name="name")
 	private String name;
-
 
 }

@@ -1,5 +1,6 @@
 package com.dcompras.gamarra.model;
 
+import com.dcompras.gamarra.entity.Category;
 import lombok.Getter;
 import lombok.Setter;
 

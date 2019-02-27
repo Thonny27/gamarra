@@ -32,8 +32,6 @@ public class TypeService {
 	public boolean add(Type type){
 		logger.info("Creando type");
 		try{
-			TypeRq typeRq = new TypeRq();
-			type.setName(typeRq.getName());
 			typeRepository.save(type);
 			logger.info("type creado");
 			return true;
