@@ -44,6 +44,9 @@ public class BrandServiceServiceTest {
     private SizeRepository sizeRepository;
 
     @Autowired
+    private TypeByCategoryRepository typeByCategoryRepository;
+
+    @Autowired
     private StoreRepository storeRepository;
 
     public List<Brand> obtenerLista(){
@@ -84,6 +87,14 @@ public class BrandServiceServiceTest {
 
     public List<Store> obtenerStorelist(){
         return storeRepository.findAll();
+    }
+
+    public List<TypeByCategory> obtenerTypeByCategorylistByCategory(int category){
+        return typeByCategoryRepository.findByCategory(category);
+    }
+
+    public List<TypeByCategory> obtenerTypeByCategorylist(){
+        return typeByCategoryRepository.findAll();
     }
 
 }
