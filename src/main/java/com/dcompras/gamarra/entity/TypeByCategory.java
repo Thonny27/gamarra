@@ -24,6 +24,6 @@ public class TypeByCategory {
     @Column(name="idCategory")
     private int idCategory;
 
-    @Column(name="Category")
-    private String category;
+    @Column(name="nameCategory")
+    private String nameCategory;
 }

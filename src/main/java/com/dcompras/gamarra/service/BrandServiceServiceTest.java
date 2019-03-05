@@ -43,8 +43,6 @@ public class BrandServiceServiceTest {
     @Qualifier("sizeRepository")
     private SizeRepository sizeRepository;
 
-    @Autowired
-    private TypeByCategoryRepository typeByCategoryRepository;
 
     @Autowired
     private StoreRepository storeRepository;
@@ -89,12 +87,10 @@ public class BrandServiceServiceTest {
         return storeRepository.findAll();
     }
 
-    public List<TypeByCategory> obtenerTypeByCategorylistByCategory(int category){
-        return typeByCategoryRepository.findByCategory(category);
+    public List<Category> obtenerCategorylist(){
+        return categoryRepository.findAll();
     }
 
-    public List<TypeByCategory> obtenerTypeByCategorylist(){
-        return typeByCategoryRepository.findAll();
-    }
+
 
 }

@@ -37,4 +37,5 @@ public class CategoryService {
         return new CategoryList(converter.categoryConverter(categoryRepository.findAll()));
     }
 
+
 }

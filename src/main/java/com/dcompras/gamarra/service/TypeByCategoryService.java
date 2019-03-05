@@ -1,7 +1,11 @@
 package com.dcompras.gamarra.service;
 
+import com.dcompras.gamarra.dto.TypeByCategoryRq;
 import com.dcompras.gamarra.dto.TypeByCategoryRs;
+import com.dcompras.gamarra.dto.TypeByRepositoryRs;
+import com.dcompras.gamarra.entity.Category;
 import com.dcompras.gamarra.entity.TypeByCategory;
+import com.dcompras.gamarra.repository.CategoryRepository;
 import com.dcompras.gamarra.repository.TypeByCategoryRepository;
 import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +26,19 @@ public class TypeByCategoryService {
     @Qualifier("brandServiceServiceTest")
     private BrandServiceServiceTest brandServiceServiceTest;
 
-    public boolean add(TypeByCategory typeByCategory){
+    @Autowired
+    @Qualifier("categoryRepository")
+    private CategoryRepository categoryRepository;
+
+    public boolean add(TypeByCategoryRq request){
         logger.info("creando typeClothing...");
+        TypeByCategory response = new TypeByCategory();
         try {
-            typeByCategoryRepository.save(typeByCategory);
+            response.setIdCategory(request.getIdCategory());
+            response.setName(request.getName());
+            response.setNameCategory(brandServiceServiceTest.obtenerCategorylist().get(request.getIdCategory()).getName());
+
+            typeByCategoryRepository.save(response);
             logger.info("creado correctamente...");
             return true;
         }catch (Exception e){
@@ -34,7 +47,7 @@ public class TypeByCategoryService {
         return false;
     }
 
-    private List<TypeByCategoryRs> getTypeByCategory(int category){
+    /*private List<TypeByCategoryRs> getTypeByCategory(int category){
 
         List<TypeByCategoryRs> listTypeByCategory = new ArrayList<>();
 
@@ -46,7 +59,8 @@ public class TypeByCategoryService {
 
 
         return null;
-    }
+    }*/
+
 
 
 }
