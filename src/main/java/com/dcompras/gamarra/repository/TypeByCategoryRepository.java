@@ -9,4 +9,5 @@ import java.util.List;
 public interface TypeByCategoryRepository extends JpaRepository<TypeByCategory, Serializable> {
 
     public abstract List<TypeByCategory> findById(int id);
+    public abstract List<TypeByCategory> findByIdCategory(int idCategory);
 }

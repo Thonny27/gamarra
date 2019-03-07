@@ -61,6 +61,11 @@ public class TypeByCategoryService {
         return null;
     }*/
 
+    public List<TypeByCategory> listTypeCategory(int idCategory){
+
+        return typeByCategoryRepository.findByIdCategory(idCategory);
+    }
+
 
 
 }
