@@ -12,6 +12,7 @@ import com.dcompras.gamarra.entity.Type;
 public interface TypeRepository extends JpaRepository<Type, Serializable> {
 	
 	public abstract List<Type> findById (int id);
-	
+	public abstract int removeTypeById(int id);
+
 
 }
