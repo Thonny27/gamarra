@@ -23,11 +23,6 @@ public class TypeController {
 	@Autowired
 	@Qualifier("typeRepository")
 	private TypeRepository typeRepository;
-
-
-	@Autowired
-	@Qualifier("typeRepository2")
-	private TypeRepository2 typeRepository2;
 	
 	@GetMapping("/listType")
 	public TypeList getTypes(){
